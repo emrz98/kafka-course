@@ -1,0 +1,31 @@
+docker-compose -f [script-file] -p [project] up -d
+
+
+bajar el contenedor
+docker-compose -f [script-file] -p [project] down
+
+
+
+entrar al bash de linux dentro de docker
+docker exec -it [container name] bash
+
+
+Crear topics
+kafka-topics.sh
+
+Cuando hay un error en la creacion del topic te muestra la documentacion
+kafka-topics.sh --bootstrap-server localhost:9092
+
+este funciona
+kafka-topics.sh --bootstrap-server localhost:9092 --create --topic t-hello
+--partitions 1 --replication-factor 1
+
+listar topics
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+descripcion del topic
+kafka-topics.sh --bootstrap-server localhost:9092 --listar
+
+
+kafka-console para un consumer
+ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic t-multi-partitions --offset earliest --partition 0
